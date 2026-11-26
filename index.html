@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Portfolio Generator</h1>
+      <p>Fill in your details and get a ready-to-use portfolio website.</p>
+    </div>
+    <div class="top-actions">
+      <button type="button" id="sample" class="btn secondary">Fill sample data</button>
+      <button type="button" id="reset" class="btn secondary">Clear</button>
+      <button type="button" id="download" class="btn primary">Download portfolio</button>
+    </div>
+  </header>
+
+  <div id="status" class="status hidden"></div>
+
+  <div class="layout">
+    <!-- LEFT: the form -->
+    <form id="form" class="panel" autocomplete="off" onsubmit="return false">
+      <h2>1. Basic info</h2>
+      <label for="name">Full name *</label>
+      <input id="name" type="text" placeholder="e.g. Aarav Mehta" />
+
+      <label for="title">Headline</label>
+      <input id="title" type="text" placeholder="e.g. Full Stack Web Developer" />
+
+      <label for="about">About you</label>
+      <textarea id="about" rows="4" placeholder="Write 2-3 lines about yourself and what you are looking for."></textarea>
+
+      <h2>2. Skills</h2>
+      <label for="skills">Skills (separate with commas)</label>
+      <input id="skills" type="text" placeholder="HTML, CSS, JavaScript, React" />
+
+      <h2>3. Projects</h2>
+      <div id="projects"></div>
+      <button type="button" id="add-project" class="btn secondary full">+ Add another project</button>
+
+      <h2>4. Contact links</h2>
+      <label for="email">Email</label>
+      <input id="email" type="text" placeholder="you@example.com" />
+
+      <label for="github">GitHub</label>
+      <input id="github" type="text" placeholder="https://github.com/yourname" />
+
+      <label for="linkedin">LinkedIn</label>
+      <input id="linkedin" type="text" placeholder="https://www.linkedin.com/in/yourname" />
+
+      <h2>5. Theme</h2>
+      <div class="themes">
+        <label class="theme-option"><input type="radio" name="theme" value="light" checked /> <span class="swatch light"></span> Light</label>
+        <label class="theme-option"><input type="radio" name="theme" value="dark" /> <span class="swatch dark"></span> Dark</label>
+        <label class="theme-option"><input type="radio" name="theme" value="sunset" /> <span class="swatch sunset"></span> Sunset</label>
+      </div>
+    </form>
+
+    <!-- RIGHT: live preview -->
+    <div class="preview-box">
+      <div class="preview-label">Live preview</div>
+      <iframe id="preview" title="Portfolio preview"></iframe>
+    </div>
+  </div>
+
+  <script src="generator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
